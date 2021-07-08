@@ -9,8 +9,4 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
-    fun controllerData(value: Int) {
-        //ini id dari fragment 2 yang text_view
-        counterValue.text = value.toString()
-    }
 }
