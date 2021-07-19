@@ -36,6 +36,4 @@ class CounterFragment : Fragment() {
             activity.controllerData(showCounter)
         }
     }
-
-
 }

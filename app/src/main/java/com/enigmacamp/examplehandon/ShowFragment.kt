@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_show.*
 
 
 class ShowFragment : Fragment() {
@@ -22,6 +24,12 @@ class ShowFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_show, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val activity = activity as MainActivity
+
+        counterValue.text = activity.hasil.toString()
+    }
     companion object {
         @JvmStatic
         fun newInstance() = ShowFragment()
