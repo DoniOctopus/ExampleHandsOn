@@ -28,7 +28,8 @@ class ShowFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val activity = activity as MainActivity
 
-        counterValue.text = activity.hasil.toString()
+//        counterValue.text = Hasil.hasil.toString()
+       counterValue.text= (getActivity()?.application as BaseApplication).hasil.toString()
     }
     companion object {
         @JvmStatic

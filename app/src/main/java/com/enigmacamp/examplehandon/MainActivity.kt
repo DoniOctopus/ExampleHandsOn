@@ -8,8 +8,6 @@ import kotlinx.android.synthetic.main.fragment_show.*
 
 class MainActivity : AppCompatActivity() {
 
-    var hasil = 0
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -36,6 +34,7 @@ class MainActivity : AppCompatActivity() {
 
     fun controllerData(value: Int) {
         //ini id dari fragment 2 yang text_view
-       hasil = value
+//       Hasil.hasil = value
+        (application as BaseApplication).hasil = value
     }
 }
