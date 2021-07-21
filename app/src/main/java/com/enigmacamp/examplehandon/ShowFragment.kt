@@ -9,7 +9,6 @@ import kotlinx.android.synthetic.main.fragment_show.*
 
 
 class ShowFragment : Fragment() {
-
     var counter: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {

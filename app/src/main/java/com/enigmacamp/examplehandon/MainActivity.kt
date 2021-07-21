@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() ,CounterInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //disini kita membutuhkan newInstace,karena ketika kita membuat fragment dengan argument constroctur akan terjadi error ketika device di rotasi
         counterFragment = CounterFragment.newInstance(this)
         counterShowFragment = ShowFragment()
 
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() ,CounterInterface {
         }
 
         counterShowFragmentButton.setOnClickListener {
+            counterShowFragment.counter = counter
             switchFragment(counterShowFragment)
         }
     }

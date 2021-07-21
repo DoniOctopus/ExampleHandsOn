@@ -31,7 +31,7 @@ class CounterFragment : Fragment() {
             counterHandler.notifyIncrease()
         }
         decreaseButton.setOnClickListener {
-            println("INCREASE BUTTON DIPANGGIL")
+            println("DECREASE BUTTON DIPANGGIL")
             counterHandler.notifyDecrease()
         }
     }
