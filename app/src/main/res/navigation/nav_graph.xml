@@ -53,4 +53,9 @@
         android:name="com.enigmacamp.examplehandon.HistoryFragment"
         android:label="fragment_history"
         tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.enigmacamp.examplehandon.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" /><action android:id="@+id/action_global_helpFragment" app:destination="@id/helpFragment"/>
 </navigation>

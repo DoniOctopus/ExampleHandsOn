@@ -43,6 +43,10 @@ class LoginFragment : Fragment() {
             navController.navigate(R.id.action_loginFragment_to_homeFragment,bundle)
         }
 
+        text_view_help.setOnClickListener {
+            navController.navigate(R.id.action_global_helpFragment)
+        }
+
     }
     override fun onDestroy() {
         super.onDestroy()
