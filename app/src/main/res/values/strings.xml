@@ -2,6 +2,9 @@
     <string name="app_name">ExampleHandOn</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">TRANSACTION SCREEN</string>
+    <string name="hello_blank_balance">BALANCE SCREEN</string>
+    <string name="hello_blank_history">HISTORY SCREEN</string>
     <string name="transaction">Transaction</string>
     <string name="balance">Balance</string>
+    <string name="history">History</string>
 </resources>

@@ -27,6 +27,12 @@
         <argument
             android:name="username"
             app:argType="string" />
+        <action
+            android:id="@+id/action_homeFragment_to_balanceFragment"
+            app:destination="@id/balanceFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
     </fragment>
     <fragment
         android:id="@+id/transactionFragment"
@@ -37,4 +43,14 @@
             android:name="angka"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/balanceFragment"
+        android:name="com.enigmacamp.examplehandon.BalanceFragment"
+        android:label="fragment_balance"
+        tools:layout="@layout/fragment_balance" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.enigmacamp.examplehandon.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
 </navigation>

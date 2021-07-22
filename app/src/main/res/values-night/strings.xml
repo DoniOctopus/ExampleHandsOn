@@ -2,4 +2,5 @@
 <resources>
     <string name="transaction">Transaction</string>
     <string name="balance">Balance</string>
+    <string name="history">History</string>
 </resources>

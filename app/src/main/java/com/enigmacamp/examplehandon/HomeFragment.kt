@@ -30,15 +30,26 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
+
+        //get Name From Login with bundle
+        val hasil ="Welcome " + arguments?.getString("username")
+        Log.d("Masuk", "onViewCreated:")
+        user_name.text = hasil.toString()
+
+
         btn_transaction.setOnClickListener {
 //            var bundle = bundleOf("angka" to 100)
 //            navController.navigate(R.id.action_homeFragment_to_transactionFragment,bundle)
             navController.navigate(R.id.action_homeFragment_to_transactionFragment)
         }
 
-        val hasil ="Welcome " + arguments?.getString("username")
-        Log.d("Masuk", "onViewCreated:")
-        user_name.text = hasil.toString()
+        btn_blance.setOnClickListener {
+           navController.navigate(R.id.action_homeFragment_to_balanceFragment)
+        }
+
+        btn_history.setOnClickListener {
+            navController.navigate(R.id.action_homeFragment_to_historyFragment)
+        }
     }
     override fun onDestroy() {
         super.onDestroy()
