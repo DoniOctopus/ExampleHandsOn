@@ -54,22 +54,19 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_margin="5dp"
-            android:text="@string/transaction"
-            app:cornerRadius="15dp" />
+            android:text="@string/transaction" />
         <Button
             android:id="@+id/btn_blance"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_margin="5dp"
-            android:text="@string/balance"
-            app:cornerRadius="15dp" />
+            android:text="@string/balance" />
         <Button
             android:id="@+id/btn_history"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_margin="5dp"
-            android:text="@string/history"
-            app:cornerRadius="15dp" />
+            android:text="@string/history" />
 
     </LinearLayout>
 
