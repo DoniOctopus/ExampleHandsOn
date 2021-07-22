@@ -34,8 +34,8 @@ class TransactionFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         navController = Navigation.findNavController(view)
-        val angka = arguments?.getInt("angka")
-        Log.d("Masuk", "onViewCreated : $angka")
+//        val angka = arguments?.getInt("angka")
+//        Log.d("Masuk", "onViewCreated : $angka")
 
         btn_back.setOnClickListener {
             navController.popBackStack()
