@@ -20,9 +20,6 @@ class LoginFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("hancur_login", "onCreate: ")
-
-
     }
 
     override fun onCreateView(
@@ -37,16 +34,8 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
         btn_login.setOnClickListener {
-            val name = username.text
-            Log.d("name", "onViewCreated: ${name.toString()}")
-            var bundle = bundleOf("username" to name.toString())
-            navController.navigate(R.id.action_loginFragment_to_homeFragment,bundle)
+            navController.navigate(R.id.action_loginFragment_to_homeFragment)
         }
-
-    }
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("hancur_login", "onDestroy: ")
     }
 
     companion object {

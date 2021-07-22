@@ -7,27 +7,55 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="@color/teal_200"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:src="@drawable/ic_baseline_face_24"/>
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="name"
+                android:textSize="30dp" />
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
 
     <LinearLayout
         android:id="@+id/linierlayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
         android:orientation="vertical"
-        android:gravity="center">
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView">
 
-        <TextView
-            android:id="@+id/user_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="name"
-            android:textSize="30dp" />
         <Button
             android:id="@+id/btn_transaction"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_margin="5dp"
             android:text="@string/transaction"
-            app:cornerRadius="15dp"/>
+            app:cornerRadius="15dp" />
 
     </LinearLayout>
 

@@ -21,9 +21,7 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_transactionFragment"
-            app:destination="@id/transactionFragment"
-            app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/transactionFragment" />
         <argument
             android:name="username"
             app:argType="string" />
@@ -36,5 +34,8 @@
         <argument
             android:name="angka"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_transactionFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 </navigation>

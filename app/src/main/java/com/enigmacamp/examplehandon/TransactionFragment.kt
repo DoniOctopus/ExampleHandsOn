@@ -18,7 +18,6 @@ class TransactionFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("hancur_transaction", "onCreate: ")
 
     }
 
@@ -32,19 +31,11 @@ class TransactionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         navController = Navigation.findNavController(view)
-        val angka = arguments?.getInt("angka")
-        Log.d("Masuk", "onViewCreated : $angka")
 
         btn_back.setOnClickListener {
-            navController.popBackStack()
+            navController.navigate(R.id.action_transactionFragment_to_loginFragment)
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("hancur_Transaction", "onDestroy: ")
     }
 
     companion object {

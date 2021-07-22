@@ -18,7 +18,6 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("hancur_home", "onCreate: ")
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -31,18 +30,10 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
         btn_transaction.setOnClickListener {
-            var bundle = bundleOf("angka" to 100)
-            navController.navigate(R.id.action_homeFragment_to_transactionFragment,bundle)
+            navController.navigate(R.id.action_homeFragment_to_transactionFragment)
         }
+    }
 
-        val hasil = arguments?.getString("username")
-        Log.d("Masuk", "onViewCreated:")
-        user_name.text = hasil.toString()
-    }
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("hancur_home", "onDestroy: ")
-    }
     companion object {
 
         @JvmStatic
