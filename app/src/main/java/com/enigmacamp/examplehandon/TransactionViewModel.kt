@@ -1,15 +1,17 @@
 package com.enigmacamp.examplehandon
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class TransactionViewModel : ViewModel(){
-    var balance = 0
+    var balance : MutableLiveData<Int>   = MutableLiveData(0)
 
     fun handleIncrement(increment : Int){
-        balance += increment
+        balance.postValue(balance.value?.plus(increment))
     }
     fun handleDecrement(decrement : Int){
-        balance -= decrement
+        balance.postValue(balance.value?.minus(decrement))
+
     }
 
 }

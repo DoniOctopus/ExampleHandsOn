@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -35,7 +36,7 @@ class TransactionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        subscriber()
         navController = Navigation.findNavController(view)
 //        val angka = arguments?.getInt("angka")
 //        Log.d("Masuk", "onViewCreated : $angka")
@@ -46,12 +47,18 @@ class TransactionFragment : Fragment() {
 
         btn_buy.setOnClickListener {
             viewModel.handleIncrement(textInputTransaction.text.toString().toInt())
-            result.text =viewModel.balance.toString()
         }
         btn_sell.setOnClickListener {
             viewModel.handleDecrement(textInputTransaction.text.toString().toInt())
-            result.text =viewModel.balance.toString()
         }
+
+    }
+
+    private fun subscriber(){
+        var balanceObserver : Observer<Int> = Observer {
+            it -> result.text = it.toString()
+        }
+        viewModel.balance.observe(viewLifecycleOwner,balanceObserver)
     }
 
     override fun onDestroy() {
