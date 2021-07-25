@@ -7,10 +7,10 @@ class TransactionViewModel : ViewModel(){
     var balance : MutableLiveData<Int>   = MutableLiveData(0)
 
     fun handleIncrement(increment : Int){
-        balance.postValue(balance.value?.plus(increment))
+        balance.value = balance.value?.plus(increment)
     }
     fun handleDecrement(decrement : Int){
-        balance.postValue(balance.value?.minus(decrement))
+        balance.value = balance.value?.minus(decrement)
 
     }
 
