@@ -47,6 +47,7 @@
         android:layout_height="0dp"
         android:gravity="center"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintTop_toBottomOf="@+id/materialCardView">
 
         <Button
@@ -55,12 +56,14 @@
             android:layout_height="100dp"
             android:layout_margin="5dp"
             android:text="@string/transaction" />
+
         <Button
             android:id="@+id/btn_blance"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_margin="5dp"
             android:text="@string/balance" />
+
         <Button
             android:id="@+id/btn_history"
             android:layout_width="match_parent"
@@ -69,5 +72,14 @@
             android:text="@string/history" />
 
     </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

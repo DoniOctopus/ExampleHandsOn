@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/btn_homeFragment"
+        android:title="Home"
+        app:showAsAction="always"
+        android:orderInCategory="1"
+        android:icon="@drawable/ic_baseline_home_24"/>
+    <item android:id="@+id/btn_transactionFragment"
+        android:title="Transaction"
+        app:showAsAction="always"
+        android:orderInCategory="2"
+        android:icon="@drawable/ic_baseline_add_shopping_cart_24"/>
+    <item android:id="@+id/btn_balanceFragment"
+        android:title="Balance"
+        app:showAsAction="always"
+        android:orderInCategory="3"
+        android:icon="@drawable/ic_baseline_monetization_on_24"/>
+
+</menu>
