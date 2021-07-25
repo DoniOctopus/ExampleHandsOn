@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -15,6 +16,7 @@ import kotlin.math.log
 class TransactionFragment : Fragment() {
 
     private lateinit var navController: NavController
+    private lateinit var viewModel: TransactionViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +29,7 @@ class TransactionFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        viewModel = ViewModelProvider(this).get(TransactionViewModel::class.java)
         return inflater.inflate(R.layout.fragment_transaction, container, false)
     }
 
@@ -39,6 +42,15 @@ class TransactionFragment : Fragment() {
 
         btn_back.setOnClickListener {
             navController.popBackStack()
+        }
+
+        btn_buy.setOnClickListener {
+            viewModel.handleIncrement(textInputTransaction.text.toString().toInt())
+            result.text =viewModel.balance.toString()
+        }
+        btn_sell.setOnClickListener {
+            viewModel.handleDecrement(textInputTransaction.text.toString().toInt())
+            result.text =viewModel.balance.toString()
         }
     }
 
