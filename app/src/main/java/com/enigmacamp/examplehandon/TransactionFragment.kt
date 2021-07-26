@@ -35,10 +35,8 @@ class TransactionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        result.text =viewModel.balance.toString()
         navController = Navigation.findNavController(view)
-//        val angka = arguments?.getInt("angka")
-//        Log.d("Masuk", "onViewCreated : $angka")
 
         btn_back.setOnClickListener {
             navController.popBackStack()
