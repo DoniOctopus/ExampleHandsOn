@@ -22,7 +22,11 @@ class TransactionFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d("hancur_transaction", "onCreate: ")
+        initViewModel()
+    }
 
+    private fun initViewModel(){
+        viewModel = ViewModelProvider(this).get(TransactionViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -30,7 +34,6 @@ class TransactionFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        viewModel = ViewModelProvider(this).get(TransactionViewModel::class.java)
         return inflater.inflate(R.layout.fragment_transaction, container, false)
     }
 
@@ -56,7 +59,7 @@ class TransactionFragment : Fragment() {
         var balanceObserver : Observer<Int> = Observer {
             it -> result.text = it.toString()
         }
-        viewModel.balance.observe(viewLifecycleOwner,balanceObserver)
+        viewModel.balanceLiveData.observe(viewLifecycleOwner,balanceObserver)
     }
 
     override fun onDestroy() {
